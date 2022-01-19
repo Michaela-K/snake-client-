@@ -13,13 +13,12 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   conn.on("connect", () => {
-    console.log(`Hiya!`);
-    conn.write("Successfully connected to game server");
+    console.log("Hiya!, Successfully connected to game server");
     conn.write("Name: MIC");
-    conn.on("connect", () => {
-      conn.write("Move: up");
-    });
   });
+  // conn.on("connect", () => {
+  //   conn.write("Move: up");
+  // });
 
   conn.on("data", (data) => {
     console.log("Server says: ", data);
