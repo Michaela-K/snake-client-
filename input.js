@@ -1,3 +1,5 @@
+const {message} = require('./constants');
+
 // Stores the active TCP connection object.
 let connection;
 //setup interface to handle user input from stdin
@@ -38,6 +40,9 @@ const handleUserInput = function(key) {
     console.log("you got that right...");
     connection.write("Move: right");
   }
+  if(message[key]){
+    connection.write(message[key])
+  };
 };
 
 
